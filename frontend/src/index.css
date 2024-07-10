@@ -10,17 +10,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad&display=swap');
 body {
   background-color: #000300;
-  background-image: url("../public/images/bg-main.jpg"); /* Default background image */
-  background-size: contain ; /* Ensure the image covers the entire screen */
-  background-position: center top 100px;
-  background-repeat: no-repeat;
-  height: 100vh; /* Ensure body takes full viewport height */
+  
   
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    background-image: url("../public/images/bg-mobile.png"); /* Background image for small screens */
-    background-size: contain;
-  }
-}
+/* 
+background-image: url("../public/images/tree.png");
+  background-size: contain ;
+  background-position: center top 100px;
+  background-repeat: no-repeat;
+  height: 100vh; Ensure body takes full viewport height 
+ */

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 const Navbar = () => {
@@ -13,7 +14,9 @@ const Navbar = () => {
             <h1 className='w-full text-3xl font-normal text-[#00df9a] font-montserrat'>FEATURED STORY</h1>
             {/* Display navigation links only on screens larger than md */}
             <ul className=' text-xl hidden md:flex pr-24'>
-                <li className='p-4'>Home</li>
+                <li className='p-4'>
+                    <Link to="/">Home</Link>
+                </li>
                 <li className='p-4'>About</li>
             </ul>
             {/* Menu icon for mobile screens */}
@@ -26,8 +29,12 @@ const Navbar = () => {
                 <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>FEATURED STORY</h1>
                 {/* Display sidebar links only on mobile screens */}
                 <ul className='pt-2 uppercase ms-4'>
-                    <li className='p-4 border-b border-gray-600'>Home</li>
-                    <li className='p-4'>About</li>
+                    <li className='p-4 border-b border-gray-600'>
+                        <Link to="/" onClick={handleNav}>Home</Link>
+                    </li>
+                    <li className='p-4'>
+                        <Link to="/about" onClick={handleNav}>About</Link>
+                    </li>
                 </ul>
             </div>
         </div>

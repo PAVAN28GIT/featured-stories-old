@@ -3,7 +3,7 @@ import steve from '../assets/steve-jobs.jpeg';
 
 function Quote() {
   return (
-    <div className='w-full bg-white py-8 px-4'>
+    <div className='w-full bg-gray-100 py-8 px-4'>
     <div className='max-w-[1210px] mx-auto grid md:grid-cols-2'>
       <img className='w-[250px] mx-auto my-4 ' src={steve} alt='/' />
       <div className='flex flex-col justify-center'>

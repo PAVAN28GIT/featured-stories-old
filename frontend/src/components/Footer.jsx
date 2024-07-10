@@ -11,7 +11,7 @@ import {
 
 function Footer() {
   return (
-    <div className='max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-2 gap-8 text-gray-300 border-b border-b-white'>
+    <div className='max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-2 gap-8 text-gray-300 border-t border-t-white'>
     <div>
       <h1 className='w-full text-3xl font-bold text-[#00df9a]'>Pavan Kumar K</h1>
       <p className='py-4'>
