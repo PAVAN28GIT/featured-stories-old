@@ -3,7 +3,7 @@ const router = express.Router();
 const Post = require('../models/posts');
 
 // Get all blog posts
-router.get('/api/blogs', async (req, res) => {
+router.get('/', async (req, res) => { // Correct path
   try {
     const posts = await Post.find();
     res.status(200).json({ blogs: posts });
@@ -13,7 +13,7 @@ router.get('/api/blogs', async (req, res) => {
 });
 
 // Create a new blog post
-router.post('/api/blogs', async (req, res) => {
+router.post('/', async (req, res) => { // Correct path
   try {
     const newPost = new Post(req.body);
     await newPost.save();

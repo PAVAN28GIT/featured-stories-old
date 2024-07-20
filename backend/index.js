@@ -1,24 +1,22 @@
 const connectToMongo = require('./db');
-
-const express = require('express')
-var cors = require('cors') //Middleware which allows your frontend application to make requests to your backend from a different origin.
+const express = require('express');
+const cors = require('cors');
 const dotenv = require('dotenv');
 
-dotenv.config({path: './config.env'})
+dotenv.config({ path: './config.env' });
 
-connectToMongo(); // in db.js
+connectToMongo(); //in db.js
 
-const app = express()
-const port = process.env.PORT
+const app = express();
+const port = process.env.PORT ;
 
-app.use(cors())
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 app.get('/', (req, res) => {
-  res.send('Featured stories backend')
-})
-app.use('/api/blogs', require('./routes/blogs'))
-// This line tells Express to use the routes defined in ./routes/blogs.js whenever the /api/blogs path is requested.
+  res.send('Featured stories backend');
+});
+app.use('/api/blogs', require('./routes/blogs')); // Correct path
 
 app.listen(port, () => {
-  console.log(`Featured stories backend listening on port ${port}`)
-})
+  console.log(`Featured stories backend listening on port ${port}`);
+});
