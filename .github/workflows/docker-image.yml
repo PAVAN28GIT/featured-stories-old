@@ -1,0 +1,41 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Log in to DockerHub
+      run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+    - name: Build the frontend Docker image
+      run: docker build ./frontend --file ./frontend/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-frontend:latest
+
+    - name: Push the frontend Docker image
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-frontend:latest
+
+  build-and-push-backend:
+    runs-on: ubuntu-latest
+    needs: build-and-push-frontend
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Log in to DockerHub
+      run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+    - name: Build the backend Docker image
+      run: docker build ./backend --file ./backend/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-backend:latest
+
+    - name: Push the backend Docker image
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-backend:latest
