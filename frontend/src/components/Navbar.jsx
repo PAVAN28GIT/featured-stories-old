@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return (
         <div className='fixed w-full flex justify-between items-center h-20 pl-24 pt-2 mx-auto bg-[#000300] text-white z-50'>
-            <h1 className='w-full text-3xl font-normal text-[#00df9a] font-montserrat'>FEATURED STORY</h1>
+            <h1 className='w-full text-3xl font-normal text-[#f1f1f1] font-montserrat'>FEATURED STORY</h1>
             {/* Display navigation links only on screens larger than md */}
             <ul className=' text-xl hidden md:flex pr-24'>
                 <li className='p-4'>

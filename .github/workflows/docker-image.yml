@@ -18,10 +18,10 @@ jobs:
       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
     - name: Build the frontend Docker image
-      run: docker build ./frontend --file ./frontend/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-frontend:latest
+      run: docker build ./frontend --file ./frontend/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-frontend:v2
 
     - name: Push the frontend Docker image
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-frontend:latest
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-frontend:v2
 
   build-and-push-backend:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
     - name: Build the backend Docker image
-      run: docker build ./backend --file ./backend/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-backend:latest
+      run: docker build ./backend --file ./backend/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-backend:v2
 
     - name: Push the backend Docker image
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-backend:latest
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/featured-stories-backend:v2

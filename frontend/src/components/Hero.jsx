@@ -11,7 +11,7 @@ function Hero() {
     return (
         <div className='text-white pt-32'>
             <div className="mt-[-70px] w-full mx-auto flex flex-col justify-center h-screen bg-center bg-cover"
-                style={{ backgroundImage: "url('/images/tree.png')" }} >
+                style={{ backgroundImage: "url('/images/v2bg.jpg')" }} >
                 <div className="grid grid-cols-2 gap-4 mx-24 mb-32"> {/* Added pt-20 to move the grid up */}
                     <div className="flex flex-col "> {/* Added pt-20 to move the text part up */}
                         <p className='text-left text-3xl font-bold font-Afacad leading-tight sm:text-5xl md:text-7xl'>
@@ -22,8 +22,8 @@ function Hero() {
                         </p>
                         <p className='text-sm font-thin text-left mt-4'>- MUHAMMAD ALI</p>
                     </div>
-                    <div className="flex items-center justify-center  mb-12 ml-12 pb-28"> {/* Aligned items to start */}
-                        <button className='bg-[#00df9a] w-[200px] rounded-md font-medium py-3 text-black mt-20' onClick={handleGetStartedClick}>Get Started</button> {/* Added mt-20 to position the button */}
+                    <div className="flex items-center justify-center mt-12 mb-12 ml-12 pb-28"> {/* Aligned items to start */}
+                        <button className='bg-[#f6f6f6] w-[200px] rounded-md font-medium py-3 text-black mt-20' onClick={handleGetStartedClick}>Get Started</button> {/* Added mt-20 to position the button */}
                     </div>
                 </div>
             </div>
